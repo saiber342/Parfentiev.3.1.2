@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+    <title>General page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/style.css">
+</head>
+<body>
+<div>
+
+    <div sec:authorize="!isAuthenticated()">
+        <h4><a href="/login">Login</a></h4>
+
+    </div>
+
+    <div sec:authorize="isAuthenticated()">
+        <h4><a href="/logout">Logout</a></h4>
+    </div>
+
+    <h4><a href="/user">User page</a></h4>
+    <h4><a href="/admin">User list</a></h4>
+</div>
+</body>
+</html>
